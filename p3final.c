@@ -29,5 +29,4 @@ int main()
   sum=add(n);
   output(n,sum);
   return 0;
-
 }

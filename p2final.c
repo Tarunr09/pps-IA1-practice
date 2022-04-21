@@ -17,7 +17,6 @@ int cmp(int a,int b,int c)
 
  else if (c>=a && c>=b)
  return c;
-
 }
 
 void output(int big)

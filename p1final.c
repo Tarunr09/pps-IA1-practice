@@ -3,7 +3,6 @@ void input (int *a,int *b)
 {
  printf("Enter 2 values\n");
  scanf("%d %d",a,b);
- 
 }
 
 void add(int a,int b,int *sum)

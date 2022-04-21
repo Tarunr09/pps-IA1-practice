@@ -14,6 +14,7 @@ complex input()
   scanf("%f",&a.imaginary);
   return a;
 }
+
 complex add(complex a, complex b)
 {
   complex c;
@@ -21,6 +22,7 @@ complex add(complex a, complex b)
   c.imaginary=a.imaginary+b.imaginary;
   return c;
 }
+
 void output(complex a, complex b, complex c){
   printf("The sum of 2 complex numbers (%f+i%f) + (%f+i%f): (%f+i%f)",a.real,a.imaginary,b.real,b.imaginary,c.real,c.imaginary);
 }

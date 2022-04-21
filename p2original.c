@@ -32,6 +32,4 @@ int main()
  largest=cmp(a,b,c);
  output(largest);
  return 0;
-
-
 }

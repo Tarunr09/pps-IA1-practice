@@ -11,18 +11,22 @@ int input_count()
   scanf("%d",&n);
   return n;
 }
+
 Complex input()
 {
   Complex c;
-  printf("enter the real and imaginary parts of complex number\n");
+  printf("enter the real and imaginary parts of complex 
+  number\n");
   scanf("%f%f",&c.real,&c.imaginary);
   return c;
 }
+
 void input_n(int n,Complex c[n])
 {
   for(int i=0;i<n;i++)
   c[i]=input();
 }
+
 Complex add(Complex a,Complex b)
 {
   Complex c;
@@ -30,6 +34,7 @@ Complex add(Complex a,Complex b)
   c.imaginary=a.imaginary+b.imaginary;
   return c;
 }
+
 Complex add_n(int n,Complex c[n])
 {
 Complex sum={0,0};
@@ -37,6 +42,7 @@ for(int i=0;i<n;i++)
 sum=add(sum,c[i]);
 return sum;
 }
+
 void output(int n,Complex c[n],Complex sum)
 {
   for(int i=0;i<n-1;i++)
@@ -44,6 +50,7 @@ void output(int n,Complex c[n],Complex sum)
   printf("(%f+%fi)=\n",c[n-1].real,c[n-1].imaginary);
   printf("(%f+%fi)\n",sum.real,sum.imaginary);
 }
+
 int main()
 {
   int n=input_count();

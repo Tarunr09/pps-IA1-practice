@@ -1,36 +1,54 @@
 #include<stdio.h>
 typedef struct complex
 {
-  float real;
-  float imaginary;
-}complex;
-
-complex input()
+float real,imaginary;
+}Complex;
+int input_count()
 {
-  complex a;
-  printf("Enter a real number:");
-  scanf("%f",&a.real);
-  printf("Enter a imaginary number:");
-  scanf("%f",&a.imaginary);
-  return a;
+  int n;
+  printf("enter the complex number\n");
+  scanf("%d",&n);
+  return n;
 }
-complex add(complex a, complex b)
+Complex input()
 {
-  complex c;
+  Complex c;
+  printf("enter the real and imaginary parts of complex number\n");
+  scanf("%f%f",&c.real,&c.imaginary);
+  return c;
+}
+void input_n(int n,Complex c[n])
+{
+  for(int i=0;i<n;i++)
+  c[i]=input();
+}
+Complex add(Complex a,Complex b)
+{
+  Complex c;
   c.real=a.real+b.real;
   c.imaginary=a.imaginary+b.imaginary;
   return c;
 }
-void output(complex a, complex b, complex c){
-  printf("The sum of 2 complex numbers (%f+i%f) + (%f+i%f): (%f+i%f)",a.real,a.imaginary,b.real,b.imaginary,c.real,c.imaginary);
+Complex add_n(int n,Complex c[n])
+{
+Complex sum={0,0};
+for(int i=0;i<n;i++)
+sum=add(sum,c[i]);
+return sum;
 }
-
+void output(int n,Complex c[n],Complex sum)
+{
+  for(int i=0;i<n-1;i++)
+  printf("(%f+%fi)+\n",c[i].real,c[i].imaginary);
+  printf("(%f+%fi)=\n",c[n-1].real,c[n-1].imaginary);
+  printf("(%f+%fi)\n",sum.real,sum.imaginary);
+}
 int main()
 {
-  complex a,b,c;
-  a=input();
-  b=input();
-  c=add(a,b);
-  output(a,b,c);
+  int n=input_count();
+  Complex c[n];
+  input_n(n,c);
+  Complex sum=add_n(n,c);
+  output(n,c,sum);
   return 0;
 }
